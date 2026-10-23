@@ -1,0 +1,4 @@
+# Optional plotting dependency; original execution version is not established.
+# The current Python environment has no matplotlib package metadata.
+-r requirements.txt
+matplotlib

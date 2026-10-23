@@ -1,0 +1,98 @@
+{
+  "status": "PARTIAL_REFERENCE_REPRODUCTION",
+  "scope": "Deterministic reruns and clean-environment reexecution; not external-foundry validation",
+  "successfulActualModelProcesses": 4,
+  "modelsFitPerProcess": 10,
+  "computePlatform": "Linux aarch64",
+  "repeatEnvironment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.6.1"
+  },
+  "separateEnvironment": {
+    "python": "3.12.3",
+    "dependencies": "same pinned lock"
+  },
+  "sameEnvironmentThreeRunComparison": "PASS_WITHIN_1e-12",
+  "separateEnvironmentComparison": "PASS",
+  "referenceCohortAndLabels": "PASS",
+  "referenceAllTenPointAUCsBAConfusions": "PASS",
+  "referencePrimaryLRResults": "PASS",
+  "referenceAllOriginalOutputs": "FAIL",
+  "knownAggregateMetricDifferences": [
+    {
+      "inputs": "HC",
+      "model": "RF",
+      "metric": "threshold",
+      "author": 0.7499999999999999,
+      "reexecuted": 0.7449999999999999,
+      "delta": -0.0050000000000000044
+    },
+    {
+      "inputs": "HC",
+      "model": "RF",
+      "metric": "ap",
+      "author": 0.8013419784939838,
+      "reexecuted": 0.8021555060516975,
+      "delta": 0.0008135275577136891
+    },
+    {
+      "inputs": "HCM",
+      "model": "RF",
+      "metric": "ap",
+      "author": 0.7630733381972945,
+      "reexecuted": 0.7633683169477512,
+      "delta": 0.0002949787504566981
+    },
+    {
+      "inputs": "HCMcal",
+      "model": "RF",
+      "metric": "threshold",
+      "author": 0.5099999999999999,
+      "reexecuted": 0.5149999999999999,
+      "delta": 0.0050000000000000044
+    }
+  ],
+  "bootstrapReferenceIntervals": "Some RF intervals/contrasts differ; full reference comparison did not pass",
+  "maximumRepeatPredictionDifference": 2.220446049250313e-16,
+  "analysisEntryPointSHA256": "987bf86089f98cf6e94b8feccdb5ed5d1f325e17f21eb67ca3d1acaede326c93",
+  "rawDataIncluded": false,
+  "individualLabelsOrPredictionsIncluded": false,
+  "notes": [
+    "The supplied author aggregate figures remain reference outputs, not silently overwritten by current reruns.",
+    "The exact cause of the RF differences is unresolved. Platform and native-library behavior are hypotheses, not verified causes.",
+    "Original data require separate authorization. A synthetic fixture demonstrates execution only and is not the study data.",
+    "macOS attempts stalled before fitting; no security settings were changed."
+  ],
+  "syntheticSmokeTest": {
+    "status": "PASS",
+    "purpose": "execution/schema fixture only, not paper performance",
+    "fits": 10,
+    "eligibleDays": [
+      115,
+      32,
+      49
+    ]
+  },
+  "publicAggregatePlotting": {
+    "status": "PASS",
+    "figures": [
+      "fig5_source_day",
+      "fig6_source_contrasts"
+    ],
+    "matplotlib": "3.11.2",
+    "numericDependencyLockUnchanged": true
+  },
+  "publicProtocol": {
+    "sha256": "08a6df8841d3116fee59608241575cafda27438d88cd86402c974efa828041bd",
+    "origin": "Technical-only packaging protocol supplied to satisfy the public script dependency. The author public-candidate archive omitted this file. Historical agent instructions/private provenance are intentionally excluded.",
+    "matchesHistoricalAuthorPublicProtocolHash": false,
+    "affectsAnalysisArithmetic": false
+  },
+  "release": {
+    "version": "v0.1.0",
+    "license": "MIT"
+  }
+}
