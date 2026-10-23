@@ -1,70 +1,136 @@
 {
-  "status": "PARTIAL_REFERENCE_REPRODUCTION",
+  "status": "COMPUTATIONAL_REFERENCE_REPRODUCTION_CONFIRMED_ON_MACOS",
+  "statusScope": "Confirmed for the macOS 26.2 arm64 rerun of 2026-10-23 only. Not a claim of identical arithmetic across platforms, of raw-data release, or of external-foundry validation.",
+  "documentationUpdated": "2026-10-23",
   "scope": "Deterministic reruns and clean-environment reexecution; not external-foundry validation",
-  "successfulActualModelProcesses": 4,
-  "modelsFitPerProcess": 10,
-  "computePlatform": "Linux aarch64",
-  "repeatEnvironment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "pandas": "3.0.5",
-    "scipy": "1.17.1",
-    "scikit_learn": "1.6.1"
+  "linuxAarch64ReferenceRuns": {
+    "successfulActualModelProcesses": 4,
+    "modelsFitPerProcess": 10,
+    "computePlatform": "Linux aarch64",
+    "repeatEnvironment": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "pandas": "3.0.5",
+      "scipy": "1.17.1",
+      "scikit_learn": "1.6.1"
+    },
+    "separateEnvironment": {
+      "python": "3.12.3",
+      "dependencies": "same pinned lock"
+    },
+    "sameEnvironmentThreeRunComparison": "PASS_WITHIN_1e-12",
+    "separateEnvironmentComparison": "PASS",
+    "referenceCohortAndLabels": "PASS",
+    "referenceAllTenPointAUCsBAConfusions": "PASS",
+    "referencePrimaryLRResults": "PASS",
+    "referenceAllOriginalOutputs": "PARTIAL_ON_THIS_PLATFORM",
+    "bootstrapReferenceIntervals": "Some RF intervals/contrasts differ on Linux aarch64; full reference comparison did not pass there",
+    "knownAggregateMetricDifferences": [
+      {
+        "platform": "Linux aarch64",
+        "inputs": "HC",
+        "model": "RF",
+        "metric": "threshold",
+        "author": 0.7499999999999999,
+        "reexecuted": 0.7449999999999999,
+        "delta": -0.0050000000000000044
+      },
+      {
+        "platform": "Linux aarch64",
+        "inputs": "HC",
+        "model": "RF",
+        "metric": "ap",
+        "author": 0.8013419784939838,
+        "reexecuted": 0.8021555060516975,
+        "delta": 0.0008135275577136891
+      },
+      {
+        "platform": "Linux aarch64",
+        "inputs": "HCM",
+        "model": "RF",
+        "metric": "ap",
+        "author": 0.7630733381972945,
+        "reexecuted": 0.7633683169477512,
+        "delta": 0.0002949787504566981
+      },
+      {
+        "platform": "Linux aarch64",
+        "inputs": "HCMcal",
+        "model": "RF",
+        "metric": "threshold",
+        "author": 0.5099999999999999,
+        "reexecuted": 0.5149999999999999,
+        "delta": 0.0050000000000000044
+      }
+    ],
+    "maximumRepeatPredictionDifference": 2.220446049250313e-16
   },
-  "separateEnvironment": {
-    "python": "3.12.3",
-    "dependencies": "same pinned lock"
+  "macosReferenceRerun": {
+    "computePlatform": "macOS 26.2 arm64",
+    "python": "3.11.14 (Homebrew)",
+    "compiler": "Clang 17.0.0",
+    "packages": {
+      "numpy": "2.4.6",
+      "pandas": "3.0.5",
+      "scipy": "1.17.1",
+      "scikit_learn": "1.6.1",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.6.0",
+      "python_dateutil": "2.9.0.post0",
+      "six": "1.17.0",
+      "cloudpickle": "3.1.2"
+    },
+    "numpyBlas": "Accelerate",
+    "openmpThreads": 20,
+    "dependencyLock": "requirements-macos-reference.lock",
+    "entrypointUsed": "Private original analysis entrypoint, unmodified",
+    "identicalInputSHAMatches": 3,
+    "freshProcesses": 3,
+    "modelsFitPerProcess": 10,
+    "codeModified": false,
+    "protocolModified": false,
+    "inputsModified": false,
+    "authorReportedReferenceEnvironment": {
+      "computePlatform": "macOS 26.3 arm64 Apple M4 Max",
+      "python": "3.11.15 (Homebrew)",
+      "compiler": "Clang 17.0.0",
+      "packages": "same versions as listed above",
+      "openmpThreads": 16
+    },
+    "exactEnvironmentReplicaOfAuthorEnvironment": false,
+    "notes": "The rerun used a different macOS build, Python patch version, CPU and OpenMP thread count than the author's reported environment, yet reproduced the author aggregate outputs byte-identically."
   },
-  "sameEnvironmentThreeRunComparison": "PASS_WITHIN_1e-12",
-  "separateEnvironmentComparison": "PASS",
-  "referenceCohortAndLabels": "PASS",
-  "referenceAllTenPointAUCsBAConfusions": "PASS",
-  "referencePrimaryLRResults": "PASS",
-  "referenceAllOriginalOutputs": "FAIL",
-  "knownAggregateMetricDifferences": [
-    {
-      "inputs": "HC",
-      "model": "RF",
-      "metric": "threshold",
-      "author": 0.7499999999999999,
-      "reexecuted": 0.7449999999999999,
-      "delta": -0.0050000000000000044
-    },
-    {
-      "inputs": "HC",
-      "model": "RF",
-      "metric": "ap",
-      "author": 0.8013419784939838,
-      "reexecuted": 0.8021555060516975,
-      "delta": 0.0008135275577136891
-    },
-    {
-      "inputs": "HCM",
-      "model": "RF",
-      "metric": "ap",
-      "author": 0.7630733381972945,
-      "reexecuted": 0.7633683169477512,
-      "delta": 0.0002949787504566981
-    },
-    {
-      "inputs": "HCMcal",
-      "model": "RF",
-      "metric": "threshold",
-      "author": 0.5099999999999999,
-      "reexecuted": 0.5149999999999999,
-      "delta": 0.0050000000000000044
-    }
-  ],
-  "bootstrapReferenceIntervals": "Some RF intervals/contrasts differ; full reference comparison did not pass",
-  "maximumRepeatPredictionDifference": 2.220446049250313e-16,
-  "analysisEntryPointSHA256": "987bf86089f98cf6e94b8feccdb5ed5d1f325e17f21eb67ca3d1acaede326c93",
+  "macosReferenceComparison": {
+    "metricsCsv": "10 rows, byte-identical to author original output in all three processes",
+    "intervalsCsv": "20 rows, byte-identical to author original output in all three processes",
+    "contrastsCsv": "16 rows, byte-identical to author original output in all three processes",
+    "filesComparedDirectlyByBytes": 9,
+    "dailyTable": "byte-identical",
+    "referenceCohort": [
+      115,
+      32,
+      49
+    ],
+    "maximumRepeatPredictionDifference": 2.220446049250313e-16,
+    "maximumAuthorVersusMacPredictionDifference": 7.993605777301127e-15,
+    "referenceAllOriginalOutputs": "PASS_FOR_AGGREGATE_OUTPUTS_ONLY",
+    "bootstrapReferenceIntervals": "No difference observed on macOS 26.2 arm64"
+  },
+  "referenceAllOriginalOutputsByPlatform": {
+    "linuxAarch64": "Partial: some RF thresholds, AP values and bootstrap intervals differ from the author reference; retained as a platform-specific record",
+    "macos26_2_arm64": "Aggregate CSVs byte-identical (metrics/intervals/contrasts, 9 files); daily table byte-identical; predictions differ only in floating-point representation (max 7.993605777301127e-15)",
+    "blanketPassClaimed": false
+  },
+  "priorLocalAttempt": "An earlier macOS attempt stalled before fitting completed and no security settings were changed; a later run on a different, independently held Mac completed the three fresh processes described above.",
   "rawDataIncluded": false,
   "individualLabelsOrPredictionsIncluded": false,
+  "analysisEntryPointSHA256": "987bf86089f98cf6e94b8feccdb5ed5d1f325e17f21eb67ca3d1acaede326c93",
   "notes": [
     "The supplied author aggregate figures remain reference outputs, not silently overwritten by current reruns.",
-    "The exact cause of the RF differences is unresolved. Platform and native-library behavior are hypotheses, not verified causes.",
+    "On macOS 26.2 arm64 the reexecuted aggregates matched the author outputs byte-for-byte; on Linux aarch64 the RF differences above remain.",
+    "The root cause of the Linux-platform RF differences is not established. Platform and native-library behavior are hypotheses, not verified causes.",
     "Original data require separate authorization. A synthetic fixture demonstrates execution only and is not the study data.",
-    "macOS attempts stalled before fitting; no security settings were changed."
+    "Original manuscript values are unchanged."
   ],
   "syntheticSmokeTest": {
     "status": "PASS",
@@ -89,10 +155,13 @@
     "sha256": "08a6df8841d3116fee59608241575cafda27438d88cd86402c974efa828041bd",
     "origin": "Technical-only packaging protocol supplied to satisfy the public script dependency. The author public-candidate archive omitted this file. Historical agent instructions/private provenance are intentionally excluded.",
     "matchesHistoricalAuthorPublicProtocolHash": false,
-    "affectsAnalysisArithmetic": false
+    "affectsAnalysisArithmetic": false,
+    "modifiedDuringMacosRerun": false
   },
   "release": {
     "version": "v0.1.0",
-    "license": "MIT"
+    "publicUrl": "Existing public code release v0.1.0, unchanged",
+    "license": "MIT",
+    "documentationUpdate": "2026-10-23 documentation-only update; no new release or publication issued"
   }
 }

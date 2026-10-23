@@ -1,0 +1,13 @@
+# Packages observed on the macOS 26.2 arm64 rerun of 2026-10-23.
+# Homebrew Python 3.11.14, Clang 17.0.0, numpy linked to Accelerate, OpenMP 20 threads.
+# Only directly observed versions are pinned; this file records the rerun environment
+# and does not replace requirements.lock (Linux aarch64) or requirements-plotting-tested.lock.
+cloudpickle==3.1.2
+joblib==1.6.0
+numpy==2.4.6
+pandas==3.0.5
+python-dateutil==2.9.0.post0
+scikit-learn==1.6.1
+scipy==1.17.1
+six==1.17.0
+threadpoolctl==3.6.0
